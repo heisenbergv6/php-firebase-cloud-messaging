@@ -159,9 +159,6 @@ class Message implements \JsonSerializable
         if ($this->priority) {
             $jsonData['priority'] = $this->priority;
         }
-        if ($this->notification) {
-            $jsonData['notification'] = $this->notification;
-        }
 
         return $jsonData;
     }
