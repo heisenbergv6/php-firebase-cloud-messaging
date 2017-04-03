@@ -24,10 +24,29 @@ class Notification extends Message
         parent::__construct();
     }
 
+    /**
+     * Get title notification
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
     public function setTitle($title)
     {
         $this->title = $title;
         return $this;
+    }
+
+    /**
+     * Get body notification
+     *
+     * @return string
+     */
+    public function getBody()
+    {
+        return $this->body;
     }
 
     public function setBody($body)

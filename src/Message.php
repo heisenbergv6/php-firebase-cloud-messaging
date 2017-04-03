@@ -46,7 +46,12 @@ class Message implements \JsonSerializable
 
     public function setNotification(Notification $notification)
     {
-        $this->notification = $notification;
+        if($notification->getTitle()!=""){
+            $this->notification = $notification;
+        }else{
+            $this->notification = null;
+        }
+        
         return $this;
     }
 
@@ -158,6 +163,9 @@ class Message implements \JsonSerializable
         }
         if ($this->priority) {
             $jsonData['priority'] = $this->priority;
+        }
+        if ($this->notification){
+            $jsonData['notification'] = $this->notification;
         }
 
         return $jsonData;
